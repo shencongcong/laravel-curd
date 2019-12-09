@@ -6,7 +6,7 @@
 ## Installing
 
 ```shell
-$ composer require shencongcong/laravelCurd ~1.0
+$ composer require shencongcong/laravel-curd ~1.0
 ```
 
 ## 配置
