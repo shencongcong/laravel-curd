@@ -22,7 +22,7 @@ $ composer require shencongcong/laravel-curd ~1.0
 ],
 'aliases' => [
     // ...
-     'Curd'=> Shencongcong\LaravelCurd\Facade::class,
+     'LaravelCurd'=> Shencongcong\LaravelCurd\Facade::class,
 ],
 ```
 

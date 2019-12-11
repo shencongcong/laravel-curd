@@ -63,7 +63,7 @@ class  LaravelCurd
             // 重新组装 $data
             $tmpData = $this->laravelEvent($this->version,'curd:filterData', [$m, $data]);
 
-            $data = count($tmpData) == 0?$data:$tmpData;
+            $data = count($tmpData) == 0?$data:$tmpData[0];
 
             $this->laravelEvent($this->version,'curd:beforeAdd', [$m, $data]);
 
@@ -94,7 +94,7 @@ class  LaravelCurd
             DB::beginTransaction();
 
             $tmpData = $this->laravelEvent($this->version,'curd:filterData', [$m, &$data]);
-            $data = count($tmpData) == 0?$data:$tmpData;
+            $data = count($tmpData) == 0?$data:$tmpData[0];
 
             if ( !empty($data) ) {
                 foreach ($this->model->getFillAble() as $key) {
