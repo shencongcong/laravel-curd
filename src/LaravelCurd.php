@@ -104,11 +104,11 @@ class  LaravelCurd
                 }
             }
 
-            $this->laravelEvent($this->version,'curd:beforeEdit', [$m, $data]);
+            $this->laravelEvent($this->version,'curd:beforeUpdate', [$m, $data]);
 
             $m->save();
 
-            $this->laravelEvent($this->version,'curd:afterEdit', [$m, $data]);
+            $this->laravelEvent($this->version,'curd:afterUpdate', [$m, $data]);
 
             DB::commit();
 
