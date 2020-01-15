@@ -122,7 +122,7 @@ class  LaravelCurd
         return $m;
     }
 
-    public function list($pageSize = 0,$withTrashed = true)
+    public function list($pageSize = 0,$withTrashed = true,$pageName = 'page')
     {
         $data = $this->data;
 
@@ -134,7 +134,7 @@ class  LaravelCurd
             $builder->withTrashed();
         }
 
-        return $pageSize ? $builder->paginate($pageSize) : $builder->get();
+        return $pageSize ? $builder->paginate($pageSize,['*'], $pageName, null) : $builder->get();
     }
 
     public function detail()
